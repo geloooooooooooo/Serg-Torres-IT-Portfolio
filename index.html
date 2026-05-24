@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serg Torres - IT Portfolio</title>
+  <meta name="description" content="Network administrator portfolio for Serg Torres, showcasing infrastructure, systems support, network security, and technical project experience." />
+  <meta property="og:title" content="Serg Torres - IT Portfolio" />
+  <meta property="og:description" content="Network administrator portfolio focused on infrastructure, support, security, and operations." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --color-bg:#f7f6f2; --color-surface:#f9f8f5; --color-surface-2:#fbfbf9; --color-surface-offset:#f1efea; --color-border:#d4d1ca; --color-divider:#dcd9d5;
+      --color-text:#28251d; --color-text-muted:#66655f; --color-text-faint:#95938d; --color-text-inverse:#f9f8f4;
+      --color-primary:#0b5f72; --color-primary-hover:#094a5a; --color-primary-highlight:#d5e3e7; --color-success:#437a22;
+      --radius-sm:.375rem; --radius-md:.5rem; --radius-lg:.75rem; --radius-xl:1rem; --radius-full:9999px;
+      --shadow-sm:0 1px 2px oklch(0.2 0.01 80 / 0.06); --shadow-md:0 8px 24px oklch(0.2 0.01 80 / 0.08); --shadow-lg:0 18px 42px oklch(0.2 0.01 80 / 0.12);
+      --font-body:'Satoshi', sans-serif; --font-display:'Cabinet Grotesk', sans-serif; --content:1180px;
+    }
+    [data-theme="dark"] {
+      --color-bg:#171614; --color-surface:#1c1b19; --color-surface-2:#201f1d; --color-surface-offset:#23211f; --color-border:#393836; --color-divider:#262523;
+      --color-text:#cdccca; --color-text-muted:#9b9996; --color-text-faint:#6d6b68; --color-text-inverse:#1b1a19;
+      --color-primary:#63a7b2; --color-primary-hover:#7dbbc4; --color-primary-highlight:#243337; --color-success:#79b35a;
+      --shadow-sm:0 1px 2px oklch(0 0 0 / 0.18); --shadow-md:0 8px 24px oklch(0 0 0 / 0.28); --shadow-lg:0 18px 42px oklch(0 0 0 / 0.4);
+    }
+    *,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth;scroll-padding-top:6rem}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:var(--color-bg);color:var(--color-text)}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--color-primary);color:var(--color-text-inverse);padding:.75rem 1rem;border-radius:var(--radius-md);z-index:100}
+    .skip-link:focus{top:1rem}
+    .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+    .header{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--color-bg) 90%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in oklab,var(--color-text) 10%, transparent)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .brand-mark{width:2.2rem;height:2.2rem;padding:.4rem;border-radius:var(--radius-md);background:var(--color-surface-offset);color:var(--color-primary)}
+    nav{display:flex;align-items:center;gap:var(--space-4)}
+    nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
+    nav a:hover,.button-secondary:hover,.theme-toggle:hover{color:var(--color-text)}
+    .theme-toggle{display:grid;place-items:center;width:2.75rem;height:2.75rem;border:1px solid color-mix(in oklab,var(--color-text) 12%, transparent);border-radius:var(--radius-full);background:var(--color-surface)}
+    .hero{padding:clamp(4rem,9vw,7rem) 0 var(--space-20)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-8);align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .8rem;border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-5)}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.03em}
+    h1{font-size:var(--text-2xl);max-width:12ch}
+    h2{font-size:var(--text-xl)}
+    h3{font-size:var(--text-lg)}
+    .hero p{margin-top:var(--space-5);max-width:62ch;color:var(--color-text-muted)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
+    .button-primary,.button-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.85rem 1.1rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700}
+    .button-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .button-primary:hover{background:var(--color-primary-hover)}
+    .button-secondary{border:1px solid color-mix(in oklab,var(--color-text) 12%, transparent);background:var(--color-surface)}
+    .hero-card,.panel,.timeline-item,.project-card,.contact-card{background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .hero-card{padding:var(--space-6);display:grid;gap:var(--space-5)}
+    .kpi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
+    .kpi{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-offset)}
+    .kpi strong{display:block;font-family:var(--font-display);font-size:var(--text-xl)}
+    .kpi span{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted)}
+    section{padding:var(--space-16) 0}
+    .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--space-8);margin-bottom:var(--space-8)}
+    .section-head p,.lede,.meta,.timeline-copy,.project-card p,.contact-card p{color:var(--color-text-muted)}
+    .panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+    .panel{padding:var(--space-5)}
+    .label{font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-2)}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
+    .skill-list{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)}
+    .skill-pill{padding:.55rem .8rem;border-radius:var(--radius-full);background:var(--color-surface-offset);font-size:var(--text-sm);border:1px solid color-mix(in oklab,var(--color-text) 8%, transparent)}
+    .timeline{display:grid;gap:var(--space-4)}
+    .timeline-item{padding:var(--space-5);display:grid;grid-template-columns:160px 1fr;gap:var(--space-5)}
+    .timeline-date{font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-primary)}
+    .timeline-copy ul{margin-top:var(--space-3);padding-left:1rem}
+    .timeline-copy li+li{margin-top:.45rem}
+    .projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+    .project-card{padding:var(--space-5);display:grid;gap:var(--space-4)}
+    .project-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-4)}
+    .project-badge{font-size:var(--text-xs);font-weight:700;color:var(--color-success);text-transform:uppercase;letter-spacing:.08em}
+    .stack{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+    .stack span{padding:.35rem .65rem;background:var(--color-surface-offset);border-radius:var(--radius-full);font-size:var(--text-xs)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    .contact-card{padding:var(--space-6)}
+    .contact-list{display:grid;gap:var(--space-3);margin-top:var(--space-4)}
+    .contact-item{display:flex;justify-content:space-between;gap:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-divider)}
+    .contact-item span:first-child{color:var(--color-text-faint);font-size:var(--text-sm)}
+    .footer{padding:var(--space-8) 0 var(--space-10);border-top:1px solid var(--color-divider);color:var(--color-text-faint);font-size:var(--text-sm)}
+    .muted-link{color:var(--color-primary)}
+    @media (max-width: 960px){
+      .hero-grid,.section-head,.timeline-item,.contact-grid,.projects,.panels,.skills-grid{grid-template-columns:1fr}
+      nav{display:none}
+      .header-inner{align-items:center}
+    }
+    @media (max-width: 640px){
+      .hero{padding-top:var(--space-12)}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .kpi-grid{grid-template-columns:1fr 1fr}
+      .contact-item{flex-direction:column}
+    }
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-label="ST logo">
+          <path d="M10 13h28M10 24h20M10 35h28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M31 13v22" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>Serg Torres</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Network administrator portfolio</span>
+          <h1>Serg Torres builds reliable, secure, and well-documented networks.</h1>
+          <p>I’m an IT professional focused on network administration, infrastructure support, endpoint reliability, and day-to-day operational stability. My work centers on troubleshooting, secure connectivity, user support, and keeping systems usable for the people who depend on them.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#projects">View selected work</a>
+            <a class="button-secondary" href="#contact">Open contact details</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Profile highlights">
+          <p class="label">Core focus</p>
+          <div class="kpi-grid">
+            <div class="kpi"><strong>LAN/WAN</strong><span>Switching, routing, connectivity</span></div>
+            <div class="kpi"><strong>Security</strong><span>Access control, hardening, MFA</span></div>
+            <div class="kpi"><strong>Support</strong><span>Incident resolution and users</span></div>
+            <div class="kpi"><strong>Ops</strong><span>Documentation and process clarity</span></div>
+          </div>
+          <p class="lede">Best suited for roles involving infrastructure support, network operations, endpoint administration, and security-aware troubleshooting in business and education environments.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">About</p>
+            <h2>Practical infrastructure thinking with a support-first mindset.</h2>
+          </div>
+          <p>I approach network administration as both a technical and operational discipline: stable connectivity, clear escalation paths, secure defaults, and documentation that helps teams move faster. I’m especially interested in roles where networking, systems administration, and frontline support intersect.</p>
+        </div>
+        <div class="panels">
+          <article class="panel">
+            <p class="label">What I do well</p>
+            <h3>Troubleshooting under pressure</h3>
+            <p>Identify faults quickly, isolate root causes, and communicate clearly while services are being restored.</p>
+          </article>
+          <article class="panel">
+            <p class="label">How I work</p>
+            <h3>Structured and documented</h3>
+            <p>Prefer repeatable processes, clean handover notes, and configurations that are maintainable for the next person.</p>
+          </article>
+          <article class="panel">
+            <p class="label">What I value</p>
+            <h3>Reliability before complexity</h3>
+            <p>Choose secure, sensible solutions that reduce operational friction rather than adding unnecessary layers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Skills</p>
+            <h2>Technical strengths aligned to network operations.</h2>
+          </div>
+          <p>This portfolio version is shaped toward network administrator roles, so the emphasis is on networking fundamentals, endpoint support, identity and access basics, infrastructure visibility, and operational discipline.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="panel">
+            <p class="label">Networking</p>
+            <h3>Connectivity and infrastructure</h3>
+            <div class="skill-list">
+              <span class="skill-pill">TCP/IP</span>
+              <span class="skill-pill">Subnetting</span>
+              <span class="skill-pill">DNS</span>
+              <span class="skill-pill">DHCP</span>
+              <span class="skill-pill">VLANs</span>
+              <span class="skill-pill">Switching</span>
+              <span class="skill-pill">Routing basics</span>
+              <span class="skill-pill">Wi-Fi support</span>
+            </div>
+          </article>
+          <article class="panel">
+            <p class="label">Systems</p>
+            <h3>Administration and support</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Windows support</span>
+              <span class="skill-pill">User provisioning</span>
+              <span class="skill-pill">Device setup</span>
+              <span class="skill-pill">Ticket handling</span>
+              <span class="skill-pill">Documentation</span>
+              <span class="skill-pill">Remote support</span>
+              <span class="skill-pill">Basic scripting</span>
+              <span class="skill-pill">Inventory tracking</span>
+            </div>
+          </article>
+          <article class="panel">
+            <p class="label">Security</p>
+            <h3>Operational security habits</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Least privilege</span>
+              <span class="skill-pill">MFA support</span>
+              <span class="skill-pill">Patch awareness</span>
+              <span class="skill-pill">VPN support</span>
+              <span class="skill-pill">Log review</span>
+              <span class="skill-pill">Endpoint hygiene</span>
+              <span class="skill-pill">Policy alignment</span>
+              <span class="skill-pill">Incident escalation</span>
+            </div>
+          </article>
+          <article class="panel">
+            <p class="label">Professional development</p>
+            <h3>Learning path</h3>
+            <div class="skill-list">
+              <span class="skill-pill">CompTIA Network+</span>
+              <span class="skill-pill">CompTIA Security+</span>
+              <span class="skill-pill">Network diagnostics</span>
+              <span class="skill-pill">Cloud fundamentals</span>
+              <span class="skill-pill">Automation basics</span>
+              <span class="skill-pill">Technical writing</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Experience</p>
+            <h2>Support, administration, and operations experience.</h2>
+          </div>
+          <p>These highlights are written to present transferable value for network administration roles: user-facing support, systems reliability, operational coordination, and the ability to turn messy environments into clearer workflows.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Technical support</div>
+            <div class="timeline-copy">
+              <h3>Infrastructure and user support</h3>
+              <p>Delivered frontline technical assistance, resolved day-to-day issues, supported device and account access, and helped maintain service continuity in a live environment.</p>
+              <ul>
+                <li>Handled troubleshooting across connectivity, user access, and device-related incidents.</li>
+                <li>Communicated fixes clearly to staff and helped reduce repeated support friction.</li>
+                <li>Worked in environments where uptime and responsiveness mattered to daily operations.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Operations</div>
+            <div class="timeline-copy">
+              <h3>Process coordination and documentation</h3>
+              <p>Built and maintained process documentation, registration workflows, and support-oriented materials that improved consistency and handover quality.</p>
+              <ul>
+                <li>Produced structured guides and operational documentation for smoother execution.</li>
+                <li>Coordinated across teams and stakeholders with an emphasis on accuracy and follow-through.</li>
+                <li>Supported environments that required both technical attention and administrative discipline.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Growth</div>
+            <div class="timeline-copy">
+              <h3>Certification and self-directed development</h3>
+              <p>Continued building technical depth through networking and security study, hands-on practice, scripting, and project work designed to strengthen portfolio credibility.</p>
+              <ul>
+                <li>Focused on practical network concepts such as addressing, segmentation, secure access, and troubleshooting logic.</li>
+                <li>Used technical projects to reinforce learning and create visible proof of skills.</li>
+                <li>Combined support experience with infrastructure learning to target network administration pathways.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Projects</p>
+            <h2>Selected project directions for GitHub and interviews.</h2>
+          </div>
+          <p>These cards are structured as portfolio-ready placeholders you can keep, refine, or replace with live repos. They are chosen to look relevant to network administrator hiring rather than generic coding demos.</p>
+        </div>
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <p class="project-badge">Project 01</p>
+                <h3>Network diagnostics toolkit</h3>
+              </div>
+            </div>
+            <p>A small utility set for ping, DNS lookup, traceroute-style checks, and quick local troubleshooting notes for common support workflows.</p>
+            <div class="stack"><span>Python</span><span>CLI</span><span>Troubleshooting</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <p class="project-badge">Project 02</p>
+                <h3>IP addressing and subnet calculator</h3>
+              </div>
+            </div>
+            <p>A clean utility that demonstrates comfort with subnetting, address planning, host ranges, and infrastructure fundamentals.</p>
+            <div class="stack"><span>Python</span><span>Networking</span><span>Math logic</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <p class="project-badge">Project 03</p>
+                <h3>IT support knowledge base</h3>
+              </div>
+            </div>
+            <p>A documented troubleshooting reference for onboarding, common incidents, user setup, and repeatable support procedures.</p>
+            <div class="stack"><span>Markdown</span><span>Documentation</span><span>Ops</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Contact</p>
+            <h2>Ready for a resume, GitHub links, and real project URLs.</h2>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <p class="label">Profile details</p>
+            <div class="contact-list">
+              <div class="contact-item"><span>Name</span><strong>Serg Torres</strong></div>
+              <div class="contact-item"><span>Target role</span><strong>Network Administrator</strong></div>
+              <div class="contact-item"><span>Location</span><strong>Nar Nar Goon North, VIC</strong></div>
+              <div class="contact-item"><span>Email</span><strong>sergangelotorres@gmail.com</strong></div>
+            </div>
+          </article>
+          <article class="contact-card">
+            <p class="label">Publishing notes</p>
+            <p>This site is built as a single static HTML file, so it can be dropped directly into a new GitHub repository and hosted easily with GitHub Pages. Replace the placeholder details, add your resume link and GitHub URL, then publish.</p>
+            <p style="margin-top:1rem;">Recommended next additions: a resume download, live repo links, certifications section, and one fully written case study for a networking or support project.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Serg Torres - IT Portfolio</div>
+  </footer>
+
+  <script>
+    (function(){
+      const toggle=document.querySelector('[data-theme-toggle]');
+      const root=document.documentElement;
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
+      function render(){
+        toggle.setAttribute('aria-label','Switch to '+(theme==='dark'?'light':'dark')+' mode');
+        toggle.innerHTML=theme==='dark'
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      }
+      render();
+      toggle.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);render();});
+    })();
+  </script>
+</body>
+</html>
